@@ -33,6 +33,11 @@ class KelimeController(private val kelimeService: KelimeService) {
     fun createKelimes(@RequestBody kelimelerDTO: List<KelimeDTO>): List<KelimeDTO> {
         return kelimelerDTO.map { kelimeService.saveKelime(it) }
     }
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    fun deleteKelime(@PathVariable id: Long) {
+        kelimeService.deleteKelime(id)
+    }
 
 
 

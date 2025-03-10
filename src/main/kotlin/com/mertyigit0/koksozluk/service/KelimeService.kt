@@ -55,4 +55,13 @@ class KelimeService(private val kelimeRepository: KelimeRepository) {
             alternatif_kelime = kelime.alternatif_kelime
         )
     }
+
+
+    fun deleteKelime(id: Long) {
+        val kelime = kelimeRepository.findById(id).orElseThrow {
+            throw IllegalArgumentException("Kelime bulunamadı!")
+        }
+        kelimeRepository.delete(kelime)
+    }
+
 }

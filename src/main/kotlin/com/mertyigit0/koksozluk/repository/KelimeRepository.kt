@@ -8,4 +8,7 @@ import org.springframework.stereotype.Repository
 interface KelimeRepository : JpaRepository<Kelime, Long> {
     // İhtiyaca göre özelleştirilmiş sorgular ekleyebilirsiniz
     fun findByKelime(kelime: String): Kelime?
+
+
+
 }
